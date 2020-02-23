@@ -2,7 +2,7 @@
 const nft = {}
 const program = require('commander')
 const pkg = require('./package.json')
-// const path = require('path')
+const path = require('path')
 const childProcess = require('child_process')
   // git 相关
 program
@@ -13,10 +13,11 @@ program
   .description('打开开启服务')
   .option('-d, --dev', '开发环境 发布')
   .action(function (cmd) {
-    // console.log(path.join(__dirname, 'lb'), '----')
-    // console.log(path.join(process.cwd(), 'cwd'), '----')
+    const locPath = path.join(__dirname, 'src/index.js');
+    console.log(path.join(__dirname, 'src/index.js'), '----')
+    console.log(path.join(process.cwd(), 'cwd'), '----')
     // childProcess.spawn('npm', ['run', 'start'])
-    childProcess.execSync('node src/index.js')
+    childProcess.execSync(`node ${locPath}`)
   })
 
   // release 相关
