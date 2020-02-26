@@ -1,24 +1,30 @@
-# local-service
+## 本包功能说明 local-service
+- 获取oss上传凭证，完成前端oss直传功能
+
+## 安装
 ```
-npm install
-npm install --only=dev
-npm run dev
-```
-## 开发环境下需要自动重启项目工程，本例子使用nodemon，需要全局安装
-```
-npm install -g nodemon
-```
-## 使用babel编译，需要全局安装
-```
-npm install -g babel-cli
-```
-## 使用cross-env解决跨平台问题
-## 使用eslint来统一代码的风格,需要全局安装
-```
-npm install -g eslint eslint-plugin-standard eslint-config-standard eslint-plugin-promise babel-eslint
+npm install locser -g
 ```
 
-## 接口获取
+## 添加locser.config.js配置， 配置说明如下
+```
+module.exports = {
+  port: 3602,
+  oss: { // 填你自己阿里云OSS的相关账号
+    OSSAccessKeyId: 'xxx',
+    secret: 'xxx',
+    host: 'xxx' 
+  }
+}
+```
+
+## 在locser.config.js目录下运行
+
+```
+locser start
+```
+
+## 接口上传凭证接口
 http://localhost:3602/getUploadPolicy
 
 ## QA

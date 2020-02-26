@@ -18,6 +18,7 @@ program
     console.log(path.join(process.cwd(), 'cwd'), '----')
     // childProcess.spawn('npm', ['run', 'start'])
     childProcess.execSync(`node ${locPath}`)
+    console.log('---✔你的本地服务已启动✔--------')
   })
 
   // release 相关
