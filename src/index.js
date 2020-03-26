@@ -3,6 +3,9 @@ const app = new Koa()
 const router = require('./router')
 const config = require('./config')
 const kcors = require('kcors')
+const xls = require('koa-router-xls')
+const formParser = require('koa-router-form-parser')
+
 app.use(kcors())
 
 app.context.OK = function (data) {
@@ -24,6 +27,9 @@ app.use(async (ctx, next) => {
     ctx.ERR(error.message, error.status || 500)
   }
 })
+
+app.use(formParser())
+app.use(xls())
 app.use(router.routes())
 app.use(router.allowedMethods())
 

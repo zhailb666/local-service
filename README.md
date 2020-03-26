@@ -29,3 +29,9 @@ http://localhost:3602/getUploadPolicy
 
 ## QA
 https://www.jianshu.com/p/beafd9ac9656
+
+## node xls
+https://github.com/qixin1991/koa-router-xls
+
+## 本地开发
+npm link

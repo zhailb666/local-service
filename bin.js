@@ -4,8 +4,8 @@ const program = require('commander')
 const pkg = require('./package.json')
 const path = require('path')
 const childProcess = require('child_process')
-const readline = require('readline');
-var shell = require('shelljs');
+const readline = require('readline')
+var shell = require('shelljs')
 
 var exec = childProcess.exec;
   // git 相关
@@ -23,7 +23,7 @@ program
   .description('打开开启服务')
   .option('-d, --dev', '开发环境 发布')
   .action(function (cmd) {
-    const locPath = path.join(__dirname, 'src/index.js');
+    const locPath = path.join(__dirname, 'src/index.js')
     console.log(path.join(__dirname, 'src/index.js'), '----')
     console.log(path.join(process.cwd(), 'cwd'), '----')
     // childProcess.spawn('npm', ['run', 'start'])
