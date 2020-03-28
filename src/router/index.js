@@ -8,6 +8,7 @@ var fs = require('fs')
 const path = require('path')
 
 router.get('/getUploadPolicy', async (ctx) => {
+  const { fileName } = ctx.query || {}
   const dirPath = 'testOSS/'
   const {OSSAccessKeyId, host, secret} = config.app.oss
   let end = new Date().getTime() + 300000
@@ -27,7 +28,7 @@ router.get('/getUploadPolicy', async (ctx) => {
     host,
     policy,
     signature,
-    saveName: end,
+    saveName: `${end}_${fileName}`,
     startsWith: dirPath
   })
 })
